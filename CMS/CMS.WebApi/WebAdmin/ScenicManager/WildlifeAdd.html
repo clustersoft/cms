@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html ng-app="myWildlife">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>添加动植物</title>
+	<meta charset="utf-8" />
+    <!--附件引用-->
+    <link href="../scripts/webuploader/dist/webuploader.css" rel="stylesheet" />
+    <link href="../css/styles1.css" rel="stylesheet" />
+
+    <link href="../scripts/layui/css/layui.css" rel="stylesheet" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../css/cmsui.css" rel="stylesheet" />
+    <link href="../scripts/layui/css/modules/layer/default/layer.css" rel="stylesheet" />
+</head>
+<body ng-controller="WildlifeController">
+    <form id="myForm" name="myForm" class="layui-form layui-form-pane">
+        <blockquote class="layui-elem-quote">
+            添加新内容
+        </blockquote>
+        <div style="width: 1200px;">
+            <div class="layui-form-item">
+                <label class="layui-form-label">动植物名称</label>
+                <div class="layui-input-inline">
+                    <input id="Name" name="Name" class="layui-input" placeholder="动植物名称" autocomplete="off"  ng-model="Name" required />
+                    <span class="valid" ng-show="myForm.Name.$error.required">标题不能为空</span>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">类型</label>
+                <div class="layui-input-inline">
+                    <select id="Type" name="Type" class="Type" lay-filter="Type">
+                        <option value="1">动物</option>
+                        <option value="2">植物</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">分类</label>
+                <div class="layui-input-inline">
+                    <select id="CategoryID" name="CategoryID" class="CategoryID">
+                        <option value="" selected="">请选择</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">选择图片</label>
+                <div class="layui-input-inline">
+                    <div id="uploader-demo" class="layui-inline marginleft">
+                        <!--用来存放item-->
+                        <div id="fileList" class="uploader-list"></div>
+                        <div id="filePicker" class="layui-inline fl">选择图片</div>
+                        <input type="button" id="deletePic" class="layui-btn layui-btn-primary" style="display:none;" value="删除图片" />
+                    </div>
+                </div>
+            </div>   
+            <div class="layui-form-item">
+                <label class="layui-form-label">排序号</label>
+                <div class="layui-input-inline">
+                    <input id="OrderID" name="OrderID" class="layui-input" placeholder="排序号" value="99" autocomplete="off" />
+                </div>
+            </div>         
+            <div class="layui-form-item">
+                <label class="layui-form-label">简要介绍</label>
+                <div class="layui-input-block">
+                    <div id="container" name="content" style="height: 300px;">
+                    </div>
+                </div>
+            </div>            
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <input type="button" id="submit" class="layui-btn" value="提交"  data-ng-class="{true:'layui-btn-disabled',false:''}[myForm.$invalid]" data-ng-disabled="myForm.$invalid" />
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    <input type="button" id="back" class="layui-btn" value="返回" onclick="backs()" />
+                </div>
+            </div>
+        </div>
+        <script src="../scripts/angular.min.js"></script>
+        <script src="../scripts/layui/layui.js"></script>
+        <script src="../scripts/jquery-1.10.2.min.js"></script>
+        <script src="../scripts/model/apiurl.js"></script>
+        <script src="../scripts/webuploader/dist/webuploader.js"></script>
+        <!-- 配置文件 -->
+        <script src="../scripts/UEditor/ueditor.config.js"></script>
+        <!-- 编辑器源码文件 -->
+        <script src="../scripts/UEditor/ueditor.all.js"></script>
+        <!-- 实例化编辑器 -->  
+        <script src="../scripts/JSManager/Scenic/WildlifeAdd.js"></script>
+        <script type="text/javascript">              
+            
+        </script>
+    </form>
+</body>
+</html>

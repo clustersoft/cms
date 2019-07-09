@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>编辑详细信息</title>
+	<meta charset="utf-8" />
+    <!--附件引用-->
+    <link href="../scripts/webuploader/dist/webuploader.css" rel="stylesheet" />
+    <link href="../css/styles1.css" rel="stylesheet" />
+
+    <link href="../scripts/layui/css/layui.css" rel="stylesheet" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../css/cmsui.css" rel="stylesheet" />
+    <link href="../scripts/layui/css/modules/layer/default/layer.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="myForm" name="myForm" class="layui-form layui-form-pane">
+        <blockquote class="layui-elem-quote">
+            编辑详细信息
+        </blockquote>
+        <div style="width: 1200px;">
+            <div class="layui-form-item">
+                <label class="layui-form-label">名称</label>
+                <div class="layui-input-inline">
+                    <input id="Name" name="Name" class="layui-input" placeholder="动植物名称" autocomplete="off" disabled />
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">类型</label>
+                <div class="layui-input-inline">
+                    <!--<select id="Type" name="Type" class="Type" lay-filter="Type">
+                        <option value="" selected="">请选择</option>
+                        <option value="1">文字</option>
+                        <option value="2">图片</option>
+                        <option value="3">语音</option>
+                        <option value="4">视频</option>
+                    </select>-->
+                    <input id="Type" name="Type" class="layui-input" placeholder="动植物名称" autocomplete="off" disabled />
+                    <input type="hidden" id="hidType" />
+                </div>
+            </div>
+            <div class="layui-form-item" id="divfile">
+                <label class="layui-form-label">附件</label>
+                <div class="layui-input-block">
+                    <div id="uploader-demo2" class="marginleft">
+                        <div id="filePicker" class="layui-inline">选择文件</div>
+                        <input type="button" id="ctlBtn" class="layui-btn layui-btn-primary" value="开始上传" style="position: relative; top: -5px;" />
+                        <div id="fileList" class="uploader-list">
+                            <table class="layui-table" lay-skin="line" style="margin:0 0 10px 0;display:none;" id="tbl">
+                                <colgroup>
+                                    <col />
+                                    <col width="200" />
+                                    <col width="200" />
+                                </colgroup>
+                                <thead>
+                                    <tr style="height:37px;">
+                                        <th style="text-align:center;padding:0;">名称</th>
+                                        <th style="text-align:center;padding:0;">进度</th>
+                                        <th style="text-align:center;padding:0;">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="msg"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" id="divcontent" style="display:none;">
+                <label class="layui-form-label">详细内容</label>
+                <div class="layui-input-block">
+                    <div id="container" name="content" style="height: 300px;">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <input type="button" id="submit" class="layui-btn" value="保存" />
+                    <input type="button" id="back" class="layui-btn" value="返回" onclick="javascript: window.history.back(-1);" />
+                </div>
+            </div>
+        </div>
+
+        <script src="../scripts/layui/layui.js"></script>
+        <script src="../scripts/jquery-1.10.2.min.js"></script>
+        <script src="../scripts/model/apiurl.js"></script>
+        <script src="../scripts/laydate/laydate.js"></script>
+        <script src="../scripts/datepicker.js"></script>
+        <script src="../scripts/webuploader/dist/webuploader.js"></script>
+
+        <!-- 配置文件 -->
+        <script src="../scripts/UEditor/ueditor.config.js"></script>
+        <!-- 编辑器源码文件 -->
+        <script src="../scripts/UEditor/ueditor.all.js"></script>
+        <!-- 实例化编辑器 -->
+        <script src="../scripts/JSManager/Scenic/WildlifeDetailEdit.js"></script>
+    </form>
+</body>
+</html>

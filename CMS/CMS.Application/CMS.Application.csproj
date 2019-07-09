@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8909EC23-7CA8-4E83-BC3B-D9B530C02AC4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMS.Application</RootNamespace>
+    <AssemblyName>CMS.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net45\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\ActionService.cs" />
+    <Compile Include="Actions\IActionService.cs" />
+    <Compile Include="ArticleArticleCategories\ArticleArticleCategoryService.cs" />
+    <Compile Include="ArticleArticleCategories\IArticleArticleCategoryService.cs" />
+    <Compile Include="ArticleAttachs\ArticleAttachService.cs" />
+    <Compile Include="ArticleAttachs\Dto\CreateObjAttachInput.cs" />
+    <Compile Include="ArticleAttachs\Dto\CreatePublicityContentAttachInput.cs" />
+    <Compile Include="ArticleAttachs\Dto\GetArticleAttachOutput.cs" />
+    <Compile Include="ArticleAttachs\Dto\GetContentAttachOutput.cs" />
+    <Compile Include="ArticleAttachs\Dto\GetObjAttachOutput.cs" />
+    <Compile Include="ArticleAttachs\Dto\GetTemplateAttachOutput.cs" />
+    <Compile Include="ArticleAttachs\Dto\UpdateArticleAttachInput.cs" />
+    <Compile Include="ArticleAttachs\Dto\UpdateObjAttachInput.cs" />
+    <Compile Include="ArticleAttachs\Dto\UpdatePublicityContentAttachInput.cs" />
+    <Compile Include="ArticleAttachs\Dto\UploadAttachInput.cs" />
+    <Compile Include="ArticleAttachs\Dto\UploadAttachOutput.cs" />
+    <Compile Include="ArticleAttachs\IArticleAttachService.cs" />
+    <Compile Include="ArticleAuditLogs\ArticleAuditLogService.cs" />
+    <Compile Include="ArticleAuditLogs\Dto\GetArticleAuditLogOutput.cs" />
+    <Compile Include="ArticleAuditLogs\IArticleAuditLogService.cs" />
+    <Compile Include="ArticleCategories\ArticleCategoryService.cs" />
+    <Compile Include="ArticleCategories\Dto\ChangeCategoryOrderIDInput.cs" />
+    <Compile Include="ArticleCategories\Dto\ChangeCategoryParentIDInput.cs" />
+    <Compile Include="ArticleCategories\Dto\DeleteArticleCategoryInput.cs" />
+    <Compile Include="ArticleCategories\Dto\GetArticeCategoryTreeListOutput.cs" />
+    <Compile Include="ArticleCategories\Dto\GetCategoryActionOutput.cs" />
+    <Compile Include="ArticleCategories\Dto\GetCategoryCrumbOutput.cs" />
+    <Compile Include="ArticleCategories\Dto\GetCategoryListInput.cs" />
+    <Compile Include="ArticleCategories\Dto\CreateCategoryInput.cs" />
+    <Compile Include="ArticleCategories\Dto\GetCategoryListOutput.cs" />
+    <Compile Include="ArticleCategories\Dto\GetCategoryOutput.cs" />
+    <Compile Include="ArticleCategories\Dto\GetCategoryTreeListOutput.cs" />
+    <Compile Include="ArticleCategories\Dto\GetLoadCategoryListOutput.cs" />
+    <Compile Include="ArticleCategories\Dto\GetRoleCategoryListOutput.cs" />
+    <Compile Include="ArticleCategories\Dto\GetSelCategoryOutput.cs" />
+    <Compile Include="ArticleCategories\Dto\UpdateCategoryInput.cs" />
+    <Compile Include="ArticleCategories\IArticleCategoryService.cs" />
+    <Compile Include="ArticleContents\ArticleContentService.cs" />
+    <Compile Include="ArticleContents\IArticleContentService.cs" />
+    <Compile Include="Articles\ArticleService.cs" />
+    <Compile Include="Articles\Dto\ChangeArticleStatesInput.cs" />
+    <Compile Include="Articles\Dto\ChangeArticleStatesListInput.cs" />
+    <Compile Include="Articles\Dto\ChangeStickTopInput.cs" />
+    <Compile Include="Articles\Dto\CreateArticleInput.cs" />
+    <Compile Include="Articles\Dto\DeleteArticleInput.cs" />
+    <Compile Include="Articles\Dto\GetArticleFBListInput.cs" />
+    <Compile Include="Articles\Dto\GetArticleFBListOutput.cs" />
+    <Compile Include="Articles\Dto\GetArticleFrontOutput.cs" />
+    <Compile Include="Articles\Dto\GetArticleListInput.cs" />
+    <Compile Include="Articles\Dto\GetArticleListOutput.cs" />
+    <Compile Include="Articles\Dto\GetArticleOutput.cs" />
+    <Compile Include="Articles\Dto\GetArticlePageListInput.cs" />
+    <Compile Include="Articles\Dto\GetArticlePageListOutput.cs" />
+    <Compile Include="Articles\Dto\GetArticleSerachListInPut.cs" />
+    <Compile Include="Articles\Dto\GetArticleSerachListOutput.cs" />
+    <Compile Include="Articles\Dto\GetArticleSoureListOutput.cs" />
+    <Compile Include="Articles\Dto\GetArticleTopListInput.cs" />
+    <Compile Include="Articles\Dto\GetArticleTopOutput.cs" />
+    <Compile Include="Articles\Dto\GetArticleTopRefNoInput.cs" />
+    <Compile Include="Articles\Dto\GetArticleTopRefOutput.cs" />
+    <Compile Include="Articles\Dto\GetArticleUserListInput.cs" />
+    <Compile Include="Articles\Dto\GetShlistOutput.cs" />
+    <Compile Include="Articles\Dto\GetShTotalList.cs" />
+    <Compile Include="Articles\Dto\GetTopSlideListInput.cs" />
+    <Compile Include="Articles\Dto\GetTopSlideListOutput.cs" />
+    <Compile Include="Articles\Dto\GetTreeOutput.cs" />
+    <Compile Include="Articles\Dto\UpdateArticleInput.cs" />
+    <Compile Include="Articles\IArticleService.cs" />
+    <Compile Include="Auth\AuthService.cs" />
+    <Compile Include="BaseService.cs" />
+    <Compile Include="Base\GetObjFontListInput.cs" />
+    <Compile Include="DatabaseFactory.cs" />
+    <Compile Include="Departments\DepartmentService.cs" />
+    <Compile Include="Departments\IDepartmentSerivce.cs" />
+    <Compile Include="Disposable.cs" />
+    <Compile Include="Extension\AutoMapExtensions.cs" />
+    <Compile Include="Extension\DBExtensions.cs" />
+    <Compile Include="IBaseService.cs" />
+    <Compile Include="IconLists\XIconListService.cs" />
+    <Compile Include="IconLists\XIIconListService.cs" />
+    <Compile Include="IDatabaseFactory.cs" />
+    <Compile Include="LeaveMessages\Dto\CreateLeaveMessageInput.cs" />
+    <Compile Include="LeaveMessages\Dto\GetLeaveMessageListInput.cs" />
+    <Compile Include="LeaveMessages\Dto\GetLeaveMessageListOuput.cs" />
+    <Compile Include="LeaveMessages\ILeaveMessageService.cs" />
+    <Compile Include="LeaveMessages\LeaveMessageService.cs" />
+    <Compile Include="Logs\Dto\GetLogInput.cs" />
+    <Compile Include="Logs\Dto\GetLogListInput.cs" />
+    <Compile Include="Logs\Dto\GetLogListOutput.cs" />
+    <Compile Include="Logs\Dto\GetLogOutput.cs" />
+    <Compile Include="Logs\ILogService.cs" />
+    <Compile Include="Logs\LogService.cs" />
+    <Compile Include="Navgations\Dto\CreateNavgationInput.cs" />
+    <Compile Include="Navgations\Dto\DeleteNavgationInput.cs" />
+    <Compile Include="Navgations\Dto\GetLoadNavgationListOutput.cs" />
+    <Compile Include="Navgations\Dto\GetNavCodeOutput.cs" />
+    <Compile Include="Navgations\Dto\GetNavgationListOutput.cs" />
+    <Compile Include="Navgations\Dto\GetNavgationOutput.cs" />
+    <Compile Include="Navgations\Dto\GetPermissionNavListOutput.cs" />
+    <Compile Include="Navgations\Dto\GetRoleNavgationListOutput.cs" />
+    <Compile Include="Navgations\Dto\UpdateNavgationInput.cs" />
+    <Compile Include="Navgations\INavgationService.cs" />
+    <Compile Include="Navgations\NavgationService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicityCategories\Dto\CreatePublicityCategoryInput.cs" />
+    <Compile Include="PublicityCategories\Dto\DeletePublicityCategoryInput.cs" />
+    <Compile Include="PublicityCategories\Dto\GetPublicityCategoryOutput.cs" />
+    <Compile Include="PublicityCategories\Dto\GetPublicityCategoryListInput.cs" />
+    <Compile Include="PublicityCategories\Dto\GetPublicityCategoryListOutput.cs" />
+    <Compile Include="PublicityCategories\Dto\UpdatePublicityCategoyrInput.cs" />
+    <Compile Include="PublicityCategories\IPublicityCategoryService.cs" />
+    <Compile Include="PublicityCategories\PublicityCategoryService.cs" />
+    <Compile Include="PublicityContents\Dto\CreatePublicityContentInput.cs" />
+    <Compile Include="PublicityContents\Dto\GetPublicityContentOutput.cs" />
+    <Compile Include="PublicityContents\Dto\GetPublicityContentListInput.cs" />
+    <Compile Include="PublicityContents\Dto\GetPublicityContentListOutput.cs" />
+    <Compile Include="PublicityContents\Dto\GetPublicityShowListInput.cs" />
+    <Compile Include="PublicityContents\Dto\GetPublicityShowListOutput.cs" />
+    <Compile Include="PublicityContents\Dto\GetPublicityShowNameListInput.cs" />
+    <Compile Include="PublicityContents\Dto\UpdatePublicityContentInput.cs" />
+    <Compile Include="PublicityContents\IPublicityContentService.cs" />
+    <Compile Include="PublicityContents\PublicityContentService.cs" />
+    <Compile Include="PublicityTypes\Dto\GetPublicityTypeListOutput.cs" />
+    <Compile Include="PublicityTypes\IPublicityTypesService.cs" />
+    <Compile Include="PublicityTypes\PublicityTypesService.cs" />
+    <Compile Include="Roles\Dto\CreateRoleInput.cs" />
+    <Compile Include="Roles\Dto\DeleteRoleInput.cs" />
+    <Compile Include="Roles\Dto\GetLoadListOutput.cs" />
+    <Compile Include="Roles\Dto\GetRoleListInput.cs" />
+    <Compile Include="Roles\Dto\GetRoleListListOutput.cs" />
+    <Compile Include="Roles\Dto\GetRoleListOutput.cs" />
+    <Compile Include="Roles\Dto\GetRoleOutput.cs" />
+    <Compile Include="Roles\Dto\UpdateRoleInput.cs" />
+    <Compile Include="Roles\IRoleService.cs" />
+    <Compile Include="Roles\RoleService.cs" />
+    <Compile Include="Routes\Dto\CreateRouteInput.cs" />
+    <Compile Include="Routes\Dto\GetRouteListOutput.cs" />
+    <Compile Include="Routes\Dto\GetRouteOutput.cs" />
+    <Compile Include="Routes\Dto\UpdateRouteInput.cs" />
+    <Compile Include="Routes\Dto\GetRouteListInput.cs" />
+    <Compile Include="Routes\IRouteService.cs" />
+    <Compile Include="Routes\RouteService.cs" />
+    <Compile Include="RouteViewSpots\Dto\CreateRouteViewSpotInput.cs" />
+    <Compile Include="RouteViewSpots\Dto\GetRouteViewSpotDetailListOutput.cs" />
+    <Compile Include="RouteViewSpots\Dto\GetRouteViewSpotListOutput.cs" />
+    <Compile Include="RouteViewSpots\Dto\UpdateRouteViewSpotInput.cs" />
+    <Compile Include="RouteViewSpots\IRouteViewSpotService.cs" />
+    <Compile Include="RouteViewSpots\RouteViewSpotService.cs" />
+    <Compile Include="SystemConfigurations\ISystemConfigurationService.cs" />
+    <Compile Include="SystemConfigurations\SystemConfigurationService.cs" />
+    <Compile Include="Templates\Dto\CreateTemplateInput.cs" />
+    <Compile Include="Templates\Dto\GetTemplateListInput.cs" />
+    <Compile Include="Templates\Dto\GetTemplateListOutput.cs" />
+    <Compile Include="Templates\Dto\GetTemplateOutput.cs" />
+    <Compile Include="Templates\Dto\GetTemplateSelectListOutput.cs" />
+    <Compile Include="Templates\Dto\UpdateTemplateInput.cs" />
+    <Compile Include="Templates\ITemplateService.cs" />
+    <Compile Include="Templates\TemplateService.cs" />
+    <Compile Include="UserRoles\IUserRoleService.cs" />
+    <Compile Include="UserRoles\UserRoleService.cs" />
+    <Compile Include="Users\Dto\ChangePersonalInfoInput.cs" />
+    <Compile Include="Users\Dto\ChangePwdInput.cs" />
+    <Compile Include="Users\Dto\CreateUserInput.cs" />
+    <Compile Include="Users\Dto\DeleteUserInput.cs" />
+    <Compile Include="Users\Dto\GetSelectListOutput.cs" />
+    <Compile Include="Users\Dto\GetUserListInput.cs" />
+    <Compile Include="Users\Dto\GetUserListOutPut.cs" />
+    <Compile Include="Users\Dto\GetUserOutput.cs" />
+    <Compile Include="Users\Dto\UpdateUserInput.cs" />
+    <Compile Include="Users\Dto\LoginInput.cs" />
+    <Compile Include="Users\Dto\LoginOutput.cs" />
+    <Compile Include="Users\Dto\UserInfo.cs" />
+    <Compile Include="Users\IUserService.cs" />
+    <Compile Include="Users\UserService.cs" />
+    <Compile Include="ViewSpotContents\Dto\CreateViewSpotContentInput.cs" />
+    <Compile Include="ViewSpotContents\Dto\DeleteViewSpotContentInput.cs" />
+    <Compile Include="ViewSpotContents\Dto\GetViewSpotContentInfoOutput.cs" />
+    <Compile Include="ViewSpotContents\Dto\GetViewSpotContentListOutput.cs" />
+    <Compile Include="ViewSpotContents\Dto\GetViewSpotContentOutput.cs" />
+    <Compile Include="ViewSpotContents\Dto\UpdateViewSpotContentInput.cs" />
+    <Compile Include="ViewSpotContents\IViewSpotContentService.cs" />
+    <Compile Include="ViewSpotContents\ViewSpotContentService.cs" />
+    <Compile Include="ViewSpots\Dto\CreateViewSpotInput.cs" />
+    <Compile Include="ViewSpots\Dto\DeleteViewSpotInput.cs" />
+    <Compile Include="ViewSpots\Dto\GetViewListOutput.cs" />
+    <Compile Include="ViewSpots\Dto\GetViewRouteListOutput.cs" />
+    <Compile Include="ViewSpots\Dto\GetViewSpotInfoOutput.cs" />
+    <Compile Include="ViewSpots\Dto\GetViewSpotListInput.cs" />
+    <Compile Include="ViewSpots\Dto\GetViewSpotListOutput.cs" />
+    <Compile Include="ViewSpots\Dto\GetViewSpotOutput.cs" />
+    <Compile Include="ViewSpots\Dto\UpdateViewSpotInput.cs" />
+    <Compile Include="ViewSpots\IViewSpotService.cs" />
+    <Compile Include="ViewSpots\ViewSpotService.cs" />
+    <Compile Include="VisitRecords\Dto\CreateVisitRecordInput.cs" />
+    <Compile Include="VisitRecords\Dto\GetAnalyListOutput.cs" />
+    <Compile Include="VisitRecords\Dto\GetAnalyOutput.cs" />
+    <Compile Include="VisitRecords\Dto\GetLMListOutput.cs" />
+    <Compile Include="VisitRecords\Dto\GetLMtbCountlistOutput.cs" />
+    <Compile Include="VisitRecords\Dto\GetLMtbIPListOutput.cs" />
+    <Compile Include="VisitRecords\Dto\GetNRCountListOutput.cs" />
+    <Compile Include="VisitRecords\Dto\GetNRIPListOutput.cs" />
+    <Compile Include="VisitRecords\Dto\GetNRListOutput.cs" />
+    <Compile Include="VisitRecords\Dto\GetVisitRecordListInput.cs" />
+    <Compile Include="VisitRecords\IVisitRecordService.cs" />
+    <Compile Include="VisitRecords\VisitRecordService.cs" />
+    <Compile Include="WildlifeCategories\Dto\CreateWildLifeCategoryInput.cs" />
+    <Compile Include="WildlifeCategories\Dto\GetWildLifeCategoryListInput.cs" />
+    <Compile Include="WildlifeCategories\Dto\GetWildLifeCategoryListOutput.cs" />
+    <Compile Include="WildlifeCategories\Dto\GetWildLifeCategoryOutput.cs" />
+    <Compile Include="WildlifeCategories\Dto\UpdateWildLifeCategoryInput.cs" />
+    <Compile Include="WildlifeCategories\IWildlifeCategoryService.cs" />
+    <Compile Include="WildlifeCategories\WildlifeCategoryService.cs" />
+    <Compile Include="WildlifeContents\Dto\CreateWildlifeContentInput.cs" />
+    <Compile Include="WildlifeContents\Dto\DeleteWildliftContentInput.cs" />
+    <Compile Include="WildlifeContents\Dto\GetWildlifeContentInfoOutput.cs" />
+    <Compile Include="WildlifeContents\Dto\GetWildliftContentListOutput.cs" />
+    <Compile Include="WildlifeContents\Dto\UpdateWildlifeContentInput.cs" />
+    <Compile Include="WildlifeContents\Dto\GetWildlifeContentOutput.cs" />
+    <Compile Include="WildlifeContents\IWildlifeContentService.cs" />
+    <Compile Include="WildlifeContents\WildlifeContentService.cs" />
+    <Compile Include="WildlifeManagers\Dto\CreateWildlifeManagementInput.cs" />
+    <Compile Include="WildlifeManagers\Dto\DeleteWildlifeManagementInput.cs" />
+    <Compile Include="WildlifeManagers\Dto\GetWildlifeManagementListInput.cs" />
+    <Compile Include="WildlifeManagers\Dto\GetWildlifeManagementListOutput.cs" />
+    <Compile Include="WildlifeManagers\Dto\GetWildlifeManagementOutput.cs" />
+    <Compile Include="WildlifeManagers\Dto\GetWildlifeManagerInfoOutput.cs" />
+    <Compile Include="WildlifeManagers\Dto\UpdateWildlifeManagementInput.cs" />
+    <Compile Include="WildlifeManagers\IWildlifeManagerService.cs" />
+    <Compile Include="WildlifeManagers\WildlifeManagerService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMS.Model\CMS.Model.csproj">
+      <Project>{5ff64223-396f-473f-8399-5002b3310f42}</Project>
+      <Name>CMS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMS.Util\CMS.Util.csproj">
+      <Project>{f846361b-cb7b-47b9-8fce-52c47e430f92}</Project>
+      <Name>CMS.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Actions\Dto\" />
+    <Folder Include="ArticleContents\Dto\" />
+    <Folder Include="Departments\Dto\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

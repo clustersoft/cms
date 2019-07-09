@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <title></title>
+    <link href="../scripts/webuploader/dist/webuploader.css" rel="stylesheet" />
+    <link href="../css/styles1.css" rel="stylesheet" />
+    <link href="../scripts/layui/css/layui.css" rel="stylesheet" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../css/cmsui.css" rel="stylesheet" />
+    <link href="../scripts/layui/css/modules/layer/default/layer.css" rel="stylesheet" />
+    <style>
+        .valid {
+            top: 0px;
+            width: 100%;
+            text-align: right;
+            right: 0px;
+            color: rgb(169, 68, 66);
+            line-height: 38px;
+            padding-right: 20px;
+            padding-bottom: 0px;
+            font-size: 12px;
+            margin-top: 0px;
+            display: block;
+            position: absolute;
+            z-index: 2;
+            pointer-events: none;
+            animation-duration: 0.2s;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <blockquote class="layui-elem-quote">
+        编辑景点详细信息
+        <div class="fr" style="position:relative;top:-8px;">
+            <input type='button' value='返回' class='layui-btn layui-btn' onclick="javascript:window.history.back();" />
+        </div>
+    </blockquote>
+    <form name="myForm" class="layui-form layui-form-pane" ng-app="mySpot" ng-controller="spotController">
+        <div class="layui-form-item">
+            <label class="layui-form-label">景点名称</label>
+            <div class="layui-input-inline">
+                <input id="SpotName" name="SpotName" class="layui-input" autocomplete="off" disabled />
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">类型</label>
+            <div class="layui-input-inline">
+                <input id="TypeName" name="TypeName" class="layui-input" autocomplete="off" disabled />
+            </div>
+        </div>
+        <div class="layui-form-item " id="editor">
+            <div class="layui-input-inline" style="width:80%">
+                <div id="introduce" name="content" style="height: 300px;">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item" id="files">
+            <label class="layui-form-label">添加附件</label>
+            <div class="layui-input-block" style="width:60%">
+                <div id="uploader-demo2" class="marginleft">
+                    <div id="filePicker2" class="layui-inline">选择文件</div>
+                    <!--<input type="button" id="ctlBtn2" class="layui-btn layui-btn-primary" value="开始上传" style="position: relative; top: -5px;" />-->
+                    <!--用来存放item-->
+                    <div id="fileList2" class="uploader-list">
+                        <table class="layui-table" lay-skin="line">
+                            <colgroup>
+                                <col />
+                                <col width="200" />
+                                <col width="200" />
+                            </colgroup>
+                            <thead>
+                                <tr style="height:37px;">
+                                    <th style="padding:0 0 0 15px;">名称</th>
+                                    <th style="padding:0 0 0 15px;">进度</th>
+                                    <th style="text-align:center;padding:0;">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="msg"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <input class="layui-btn layui-btn" data-ng-class="{true:'layui-btn-disabled',false:''}[myForm.$invalid]" data-ng-disabled="myForm.$invalid" type="submit" id="submit" value="提交" />
+                <button type="submit" id="refresh" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+<script src="../scripts/angular.min.js"></script>
+<script src="../scripts/jquery-1.10.2.min.js"></script>
+<script src="../scripts/layui/lay/modules/layer.js"></script>
+<script src="../scripts/layui/layui.js"></script>
+<script src="../scripts/model/apiurl.js"></script>
+<script src="../scripts/laydate/laydate.js"></script>
+<script src="../scripts/datepicker.js"></script>
+<script src="../scripts/webuploader/dist/webuploader.js"></script>
+<!-- 配置文件 -->
+<script src="../scripts/UEditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script src="../scripts/UEditor/ueditor.all.js"></script>
+<script src="../scripts/JSManager/Scenic/EditViewSpotDetail.js"></script>

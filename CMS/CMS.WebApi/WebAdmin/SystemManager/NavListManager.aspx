@@ -1,0 +1,73 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NavListManager.aspx.cs" Inherits="CMSSystem.SystemManager.NavListManager" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../scripts/layui/css/layui.css" rel="stylesheet" />
+    <link href="../css/global.css" rel="stylesheet" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../css/cmsui.css" rel="stylesheet" />
+    <link href="../scripts/layui/css/modules/layer/default/layer.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="main-wrap">
+        <blockquote class="layui-elem-quote fhui-admin-main_hd">
+            <h2>导航管理</h2>
+        </blockquote>
+        <div class="layui-form layui-form-pane">
+            <div class="head-box">
+                <span class="fl">
+                    <a class="layui-btn btn-default btn-add" id="add" href="AddNavInfo.aspx?NavID=0"><i class="fa fa-plus"></i>&nbsp;新增</a>
+                    <a class="layui-btn btn-default layui-btn-danger" id="del"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                </span>
+            </div>
+        </div>
+        <form id="form1" runat="server" class="layui-form layui-form-pane">
+            <div class="fhui-admin-table-container">
+                <table class="layui-table">
+                    <colgroup>
+                        <col width="45" name="choose">
+                        <col>
+                        <col>
+                        <col>
+                        <%--<col >--%>
+                        <col >
+                        <col>
+                        <col width="190" >
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;" name="choose">
+                                <input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"></th>
+                            <th style="text-align: center;">导航名称</th>
+                            <th style="text-align: center;">导航标识码</th>
+                            <th style="text-align: center;">图标</th>
+                            <%--<th style="text-align: center;">链接地址</th>--%>
+                            <th style="text-align: center;">操作权限</th>
+                            <th style="text-align: center;">排序</th>
+                            <th style="text-align: center;">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="msg">
+                    </tbody>
+                </table>
+            </div>
+            <input id="pagecount" type="hidden" />
+            <input id="totalcount" type="hidden" />
+            <div id="laypages" style="margin-top: 5px; text-align: center;"></div>
+        </form>
+    </div>
+    <link href="../scripts/laypage/skin/laypage.css" rel="stylesheet" />
+    <script src="../scripts/laypage/laypage.js"></script>
+    <script src="../scripts/jquery-1.10.2.min.js"></script>
+    <script src="../scripts/layer/layer.js"></script>
+    <script src="../scripts/layui/layui.js"></script>
+    <script src="../scripts/model/base.js"></script>
+    <script src="../scripts/model/apiurl.js"></script>
+    <script src="../scripts/bootstrap/icheck.min.js"></script>
+    <script src="../scripts/JSManager/SystemManager/NavListManager.js"></script>
+</body>
+</html>

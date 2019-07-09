@@ -1,0 +1,1972 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F3CB7C5D-7A4A-4430-912E-B4E6DBC74931}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMS.WebApi</RootNamespace>
+    <AssemblyName>CMS.WebApi</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.0\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Owin.4.0.0\lib\net45\Autofac.Integration.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.0.1\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.Owin.4.0.0\lib\net45\Autofac.Integration.WebApi.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HibernatingRhinos.Profiler.Appender, Version=3.0.0.0, Culture=neutral, PublicKeyToken=0774796e73ebf640, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\HibernatingRhinos.Profiler.Appender.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.5.3\lib\net40\Swashbuckle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebApi.OutputCache.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Strathweb.CacheOutput.WebApi2.0.10.0\lib\net45\WebApi.OutputCache.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebApi.OutputCache.V2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Strathweb.CacheOutput.WebApi2.0.10.0\lib\net45\WebApi.OutputCache.V2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="WebAdmin\scripts\layui\images\face\" />
+    <Folder Include="WebFront\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\Bootstrapper.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SimpleAuthorizationServerProvider.cs" />
+    <Compile Include="App_Start\SimpleRefreshTokenProvider.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AdviceController.cs" />
+    <Compile Include="Controllers\AnalyController.cs" />
+    <Compile Include="Controllers\ArticleCategoryController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\AttachController.cs" />
+    <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IconController.cs" />
+    <Compile Include="Controllers\LogController.cs" />
+    <Compile Include="Controllers\RouteController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\TemplateController.cs" />
+    <Compile Include="Controllers\NavgationController.cs" />
+    <Compile Include="Controllers\PermissionController.cs" />
+    <Compile Include="Controllers\PublicityController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\SysconfigController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\ViewSpotController.cs" />
+    <Compile Include="Controllers\WildlifeClassController.cs" />
+    <Compile Include="Controllers\WildlifeManagerController.cs" />
+    <Compile Include="Filter\WebApiOutputCacheAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\UEditor\net\App_Code\Config.cs" />
+    <Compile Include="Scripts\UEditor\net\App_Code\ConfigHandler.cs" />
+    <Compile Include="Scripts\UEditor\net\App_Code\CrawlerHandler.cs" />
+    <Compile Include="Scripts\UEditor\net\App_Code\Handler.cs" />
+    <Compile Include="Scripts\UEditor\net\App_Code\ListFileHandler.cs" />
+    <Compile Include="Scripts\UEditor\net\App_Code\NotSupportedHandler.cs" />
+    <Compile Include="Scripts\UEditor\net\App_Code\PathFormater.cs" />
+    <Compile Include="Scripts\UEditor\net\App_Code\UploadHandler.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="WebAdmin\AdviceManager\Advice.aspx.cs">
+      <DependentUpon>Advice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\AdviceManager\Advice.aspx.designer.cs">
+      <DependentUpon>Advice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\ces.ashx.cs">
+      <DependentUpon>ces.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\ContentManager\ArticleWshList.aspx.cs">
+      <DependentUpon>ArticleWshList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\ContentManager\ArticleWshList.aspx.designer.cs">
+      <DependentUpon>ArticleWshList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\ContentManager\ColumnAdd.aspx.cs">
+      <DependentUpon>ColumnAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\ContentManager\ColumnAdd.aspx.designer.cs">
+      <DependentUpon>ColumnAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\ContentManager\ColumnEdit.aspx.cs">
+      <DependentUpon>ColumnEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\ContentManager\ColumnEdit.aspx.designer.cs">
+      <DependentUpon>ColumnEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\ContentManager\ColumnManager.aspx.cs">
+      <DependentUpon>ColumnManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\ContentManager\ColumnManager.aspx.designer.cs">
+      <DependentUpon>ColumnManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\ContentManager\ColumnSelect.aspx.cs">
+      <DependentUpon>ColumnSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\ContentManager\ColumnSelect.aspx.designer.cs">
+      <DependentUpon>ColumnSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\ContentManager\ContentAdd.aspx.cs">
+      <DependentUpon>ContentAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\ContentManager\ContentAdd.aspx.designer.cs">
+      <DependentUpon>ContentAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\ContentManager\ContentEdit.aspx.cs">
+      <DependentUpon>ContentEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\ContentManager\ContentEdit.aspx.designer.cs">
+      <DependentUpon>ContentEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\ContentManager\ContentListManager.aspx.cs">
+      <DependentUpon>ContentListManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\ContentManager\ContentListManager.aspx.designer.cs">
+      <DependentUpon>ContentListManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\MainIndex.aspx.cs">
+      <DependentUpon>MainIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\MainIndex.aspx.designer.cs">
+      <DependentUpon>MainIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\AddPicLinkInfo.aspx.cs">
+      <DependentUpon>AddPicLinkInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\AddPicLinkInfo.aspx.designer.cs">
+      <DependentUpon>AddPicLinkInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\AddPositionInfo.aspx.cs">
+      <DependentUpon>AddPositionInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\AddPositionInfo.aspx.designer.cs">
+      <DependentUpon>AddPositionInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\AddTextLinkInfo.aspx.cs">
+      <DependentUpon>AddTextLinkInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\AddTextLinkInfo.aspx.designer.cs">
+      <DependentUpon>AddTextLinkInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\EditPicLinkInfo.aspx.cs">
+      <DependentUpon>EditPicLinkInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\EditPicLinkInfo.aspx.designer.cs">
+      <DependentUpon>EditPicLinkInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\EditPositionInfo.aspx.cs">
+      <DependentUpon>EditPositionInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\EditPositionInfo.aspx.designer.cs">
+      <DependentUpon>EditPositionInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\EditTextLinkInfo.aspx.cs">
+      <DependentUpon>EditTextLinkInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\EditTextLinkInfo.aspx.designer.cs">
+      <DependentUpon>EditTextLinkInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\PictureManager.aspx.cs">
+      <DependentUpon>PictureManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\PictureManager.aspx.designer.cs">
+      <DependentUpon>PictureManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\PositionManager.aspx.cs">
+      <DependentUpon>PositionManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\PositionManager.aspx.designer.cs">
+      <DependentUpon>PositionManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\TextManager.aspx.cs">
+      <DependentUpon>TextManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\PublicityManager\TextManager.aspx.designer.cs">
+      <DependentUpon>TextManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\scripts\UEditor\UEditorHandler.ashx.cs">
+      <DependentUpon>UEditorHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\AddNavInfo.aspx.cs">
+      <DependentUpon>AddNavInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\AddNavInfo.aspx.designer.cs">
+      <DependentUpon>AddNavInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\AddRoleInfo.aspx.cs">
+      <DependentUpon>AddRoleInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\AddRoleInfo.aspx.designer.cs">
+      <DependentUpon>AddRoleInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\AddUserInfo.aspx.cs">
+      <DependentUpon>AddUserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\AddUserInfo.aspx.designer.cs">
+      <DependentUpon>AddUserInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\EditNavInfo.aspx.cs">
+      <DependentUpon>EditNavInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\EditNavInfo.aspx.designer.cs">
+      <DependentUpon>EditNavInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\EditRoleInfo.aspx.cs">
+      <DependentUpon>EditRoleInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\EditRoleInfo.aspx.designer.cs">
+      <DependentUpon>EditRoleInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\EditUserInfo.aspx.cs">
+      <DependentUpon>EditUserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\EditUserInfo.aspx.designer.cs">
+      <DependentUpon>EditUserInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\NavListManager.aspx.cs">
+      <DependentUpon>NavListManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\NavListManager.aspx.designer.cs">
+      <DependentUpon>NavListManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\RolesListManager.aspx.cs">
+      <DependentUpon>RolesListManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\RolesListManager.aspx.designer.cs">
+      <DependentUpon>RolesListManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\SysConfigManager.aspx.cs">
+      <DependentUpon>SysConfigManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\SysConfigManager.aspx.designer.cs">
+      <DependentUpon>SysConfigManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\UsersListManager.aspx.cs">
+      <DependentUpon>UsersListManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\SystemManager\UsersListManager.aspx.designer.cs">
+      <DependentUpon>UsersListManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\WebsiteManager\LogsManager.aspx.cs">
+      <DependentUpon>LogsManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\WebsiteManager\LogsManager.aspx.designer.cs">
+      <DependentUpon>LogsManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\WebsiteManager\ModuleAdd.aspx.cs">
+      <DependentUpon>ModuleAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\WebsiteManager\ModuleAdd.aspx.designer.cs">
+      <DependentUpon>ModuleAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\WebsiteManager\ModuleEdit.aspx.cs">
+      <DependentUpon>ModuleEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\WebsiteManager\ModuleEdit.aspx.designer.cs">
+      <DependentUpon>ModuleEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\WebsiteManager\ModuleManager.aspx.cs">
+      <DependentUpon>ModuleManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\WebsiteManager\ModuleManager.aspx.designer.cs">
+      <DependentUpon>ModuleManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\WebsiteManager\VisitAnaly.aspx.cs">
+      <DependentUpon>VisitAnaly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\WebsiteManager\VisitAnaly.aspx.designer.cs">
+      <DependentUpon>VisitAnaly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\WebsiteManager\VisitSearch.aspx.cs">
+      <DependentUpon>VisitSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\WebsiteManager\VisitSearch.aspx.designer.cs">
+      <DependentUpon>VisitSearch.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="libs\HibernatingRhinos.Profiler.Appender.dll" />
+    <Content Include="log4net.config" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="WebAdmin\AdviceManager\Advice.aspx" />
+    <Content Include="WebAdmin\ces.ashx" />
+    <Content Include="WebAdmin\ContentManager\ArticleWshList.aspx" />
+    <Content Include="WebAdmin\ContentManager\ColumnAdd.aspx" />
+    <Content Include="WebAdmin\ContentManager\ColumnEdit.aspx" />
+    <Content Include="WebAdmin\ContentManager\ColumnManager.aspx" />
+    <Content Include="WebAdmin\ContentManager\ColumnSelect.aspx" />
+    <Content Include="WebAdmin\ContentManager\ContentAdd.aspx" />
+    <Content Include="WebAdmin\ContentManager\ContentEdit.aspx" />
+    <Content Include="WebAdmin\ContentManager\ContentListManager.aspx" />
+    <Content Include="WebAdmin\css\cmsui.css" />
+    <Content Include="WebAdmin\css\font-awesome.min.css" />
+    <Content Include="WebAdmin\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="WebAdmin\css\global.css" />
+    <Content Include="WebAdmin\css\main.css" />
+    <Content Include="WebAdmin\css\styles1.css" />
+    <Content Include="WebAdmin\datas\emailset.js" />
+    <Content Include="WebAdmin\datas\nav.js" />
+    <Content Include="WebAdmin\HomePage.aspx" />
+    <Content Include="WebAdmin\Images\account.png" />
+    <Content Include="WebAdmin\Images\jianpan.png" />
+    <Content Include="WebAdmin\Images\lock.png" />
+    <Content Include="WebAdmin\Images\lvyou.png" />
+    <Content Include="WebAdmin\Images\user.png" />
+    <Content Include="WebAdmin\Images\yun.png" />
+    <Content Include="WebAdmin\index.aspx" />
+    <Content Include="WebAdmin\MainIndex.aspx" />
+    <Content Include="WebAdmin\PublicityManager\AddPicLinkInfo.aspx" />
+    <Content Include="WebAdmin\PublicityManager\AddPositionInfo.aspx" />
+    <Content Include="WebAdmin\PublicityManager\AddTextLinkInfo.aspx" />
+    <Content Include="WebAdmin\PublicityManager\EditPicLinkInfo.aspx" />
+    <Content Include="WebAdmin\PublicityManager\EditPositionInfo.aspx" />
+    <Content Include="WebAdmin\PublicityManager\EditTextLinkInfo.aspx" />
+    <Content Include="WebAdmin\PublicityManager\PictureManager.aspx" />
+    <Content Include="WebAdmin\PublicityManager\PositionManager.aspx" />
+    <Content Include="WebAdmin\PublicityManager\TextManager.aspx" />
+    <Content Include="WebAdmin\ScenicManager\AddRouteDetail.html" />
+    <Content Include="WebAdmin\ScenicManager\EditRoute.html" />
+    <Content Include="WebAdmin\ScenicManager\AddRoute.html" />
+    <Content Include="WebAdmin\ScenicManager\EditViewSpotDetail.html" />
+    <Content Include="WebAdmin\ScenicManager\EditViewSpot.html" />
+    <Content Include="WebAdmin\ScenicManager\RouteDetailManager.html" />
+    <Content Include="WebAdmin\ScenicManager\WildlifeAdd.html" />
+    <Content Include="WebAdmin\ScenicManager\AddViewSpotDetail.html" />
+    <Content Include="WebAdmin\ScenicManager\AddViewSpot.html" />
+    <Content Include="WebAdmin\ScenicManager\ViewSpotDetailManager.html" />
+    <Content Include="WebAdmin\ScenicManager\WildlifeClass.html" />
+    <Content Include="WebAdmin\ScenicManager\WildlifeClassAdd.html" />
+    <Content Include="WebAdmin\ScenicManager\WildlifeClassEdit.html" />
+    <Content Include="WebAdmin\ScenicManager\WildlifeDetailAdd.html" />
+    <Content Include="WebAdmin\ScenicManager\WildlifeDetailEdit.html" />
+    <Content Include="WebAdmin\ScenicManager\WildlifeDetailManager.html" />
+    <Content Include="WebAdmin\ScenicManager\WildlifeEdit.html" />
+    <Content Include="WebAdmin\ScenicManager\WildlifeManager.html" />
+    <Content Include="WebAdmin\ScenicManager\ViewSpotManager.html" />
+    <Content Include="WebAdmin\ScenicManager\RouteManager.html" />
+    <Content Include="WebAdmin\scripts\ai.0.15.0-build58334.js" />
+    <Content Include="WebAdmin\scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="WebAdmin\scripts\angular.min.js" />
+    <Content Include="WebAdmin\scripts\bootstrap\bootstrap.js" />
+    <Content Include="WebAdmin\scripts\bootstrap\bootstrap.min.js" />
+    <Content Include="WebAdmin\scripts\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="WebAdmin\scripts\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="WebAdmin\scripts\bootstrap\css\bootstrap.css" />
+    <Content Include="WebAdmin\scripts\bootstrap\css\bootstrap.min.css" />
+    <Content Include="WebAdmin\scripts\bootstrap\icheck.min.js" />
+    <Content Include="WebAdmin\scripts\common.js" />
+    <Content Include="WebAdmin\scripts\datepicker.js" />
+    <Content Include="WebAdmin\scripts\echarts.js" />
+    <Content Include="WebAdmin\scripts\html5shiv.min.js" />
+    <Content Include="WebAdmin\scripts\index.js" />
+    <Content Include="WebAdmin\scripts\jquery-1.10.2.min.js" />
+    <Content Include="WebAdmin\scripts\JQuery\jquery-1.4.2.min.js" />
+    <Content Include="WebAdmin\scripts\JQuery\jquery-1.7.2.min.js" />
+    <Content Include="WebAdmin\scripts\JSManager\AdviceManager\Advice.js" />
+    <Content Include="WebAdmin\scripts\JSManager\ContentManager\ArticleWshList.js" />
+    <Content Include="WebAdmin\scripts\JSManager\ContentManager\ColumnAdd.js" />
+    <Content Include="WebAdmin\scripts\JSManager\ContentManager\ColumnEdit.js" />
+    <Content Include="WebAdmin\scripts\JSManager\ContentManager\ColumnManager.js" />
+    <Content Include="WebAdmin\scripts\JSManager\ContentManager\ContentAdd.js" />
+    <Content Include="WebAdmin\scripts\JSManager\ContentManager\ContentEdit.js" />
+    <Content Include="WebAdmin\scripts\JSManager\ContentManager\ContentListManager.js" />
+    <Content Include="WebAdmin\scripts\JSManager\PublicityManager\TextManager.js" />
+    <Content Include="WebAdmin\scripts\JSManager\PublicityManager\PositionManager.js" />
+    <Content Include="WebAdmin\scripts\JSManager\PublicityManager\PictureManager.js" />
+    <Content Include="WebAdmin\scripts\JSManager\PublicityManager\EditTextLinkInfo.js" />
+    <Content Include="WebAdmin\scripts\JSManager\PublicityManager\EditPositionInfo.js" />
+    <Content Include="WebAdmin\scripts\JSManager\PublicityManager\EditPicLinkInfo.js" />
+    <Content Include="WebAdmin\scripts\JSManager\PublicityManager\AddTextLinkInfo.js" />
+    <Content Include="WebAdmin\scripts\JSManager\PublicityManager\AddPositionInfo.js" />
+    <Content Include="WebAdmin\scripts\JSManager\PublicityManager\AddPicLinkInfo.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\AddRoute.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\AddRouteDetail.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\AddViewSpot.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\AddViewSpotDetail.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\EditRoute.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\EditViewSpot.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\EditViewSpotDetail.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\RouteDetailManager.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\ViewSpotDetailManager.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\ViewSpotManager.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\WildlifeAdd.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\WildlifeClass.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\WildlifeClassAdd.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\WildlifeClassEdit.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\WildlifeDetailAdd.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\WildlifeDetailEdit.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\WildlifeDetailManager.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\WildlifeEdit.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\WildlifeManager.js" />
+    <Content Include="WebAdmin\scripts\JSManager\SystemManager\EditRoleInfo.js" />
+    <Content Include="WebAdmin\scripts\JSManager\SystemManager\EditNavInfo.js" />
+    <Content Include="WebAdmin\scripts\JSManager\SystemManager\ChangePWD.js" />
+    <Content Include="WebAdmin\scripts\JSManager\SystemManager\AddUserInfo.js" />
+    <Content Include="WebAdmin\scripts\JSManager\SystemManager\AddRoleInfo.js" />
+    <Content Include="WebAdmin\scripts\JSManager\SystemManager\AddNavInfo.js" />
+    <Content Include="WebAdmin\scripts\JSManager\SystemManager\PersonInfo.js" />
+    <Content Include="WebAdmin\scripts\JSManager\SystemManager\RolesListManager.js" />
+    <Content Include="WebAdmin\scripts\JSManager\SystemManager\UsersListManager.js" />
+    <Content Include="WebAdmin\scripts\JSManager\SystemManager\SysConfigManager.js" />
+    <Content Include="WebAdmin\scripts\JSManager\SystemManager\NavListManager.js" />
+    <Content Include="WebAdmin\scripts\JSManager\SystemManager\EditUserInfo.js" />
+    <Content Include="WebAdmin\scripts\JSManager\WebsiteManager\LogsManager.js" />
+    <Content Include="WebAdmin\scripts\JSManager\WebsiteManager\ModuleAdd.js" />
+    <Content Include="WebAdmin\scripts\JSManager\WebsiteManager\ModuleEdit.js" />
+    <Content Include="WebAdmin\scripts\JSManager\WebsiteManager\ModuleManager.js" />
+    <Content Include="WebAdmin\scripts\JSManager\WebsiteManager\VisitAnaly.js" />
+    <Content Include="WebAdmin\scripts\JSManager\WebsiteManager\VisitSearch.js" />
+    <Content Include="WebAdmin\scripts\laydate\laydate.js" />
+    <Content Include="WebAdmin\scripts\laydate\need\laydate.css" />
+    <Content Include="WebAdmin\scripts\laydate\skins\default\icon.png" />
+    <Content Include="WebAdmin\scripts\laydate\skins\default\laydate.css" />
+    <Content Include="WebAdmin\scripts\layer\layer.js" />
+    <Content Include="WebAdmin\scripts\layer\mobile\layer.js" />
+    <Content Include="WebAdmin\scripts\layer\mobile\need\layer.css" />
+    <Content Include="WebAdmin\scripts\layer\skin\default\icon-ext.png" />
+    <Content Include="WebAdmin\scripts\layer\skin\default\icon.png" />
+    <Content Include="WebAdmin\scripts\layer\skin\default\layer.css" />
+    <Content Include="WebAdmin\scripts\layer\skin\default\loading-0.gif" />
+    <Content Include="WebAdmin\scripts\layer\skin\default\loading-1.gif" />
+    <Content Include="WebAdmin\scripts\layer\skin\default\loading-2.gif" />
+    <Content Include="WebAdmin\scripts\laypage\laypage.js" />
+    <Content Include="WebAdmin\scripts\laypage\skin\laypage.css" />
+    <Content Include="WebAdmin\scripts\layui\css\layui.css" />
+    <Content Include="WebAdmin\scripts\layui\css\layui.mobile.css" />
+    <Content Include="WebAdmin\scripts\layui\css\modules\code.css" />
+    <Content Include="WebAdmin\scripts\layui\css\modules\laydate\icon.png" />
+    <Content Include="WebAdmin\scripts\layui\css\modules\laydate\laydate.css" />
+    <Content Include="WebAdmin\scripts\layui\css\modules\layer\code.css" />
+    <Content Include="WebAdmin\scripts\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="WebAdmin\scripts\layui\css\modules\layer\default\icon.png" />
+    <Content Include="WebAdmin\scripts\layui\css\modules\layer\default\layer.css" />
+    <Content Include="WebAdmin\scripts\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="WebAdmin\scripts\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="WebAdmin\scripts\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="WebAdmin\scripts\layui\font\iconfont.svg" />
+    <Content Include="WebAdmin\scripts\layui\layui.js" />
+    <Content Include="WebAdmin\scripts\layui\lay\dest\layui.all.js" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\code.js" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\element.js" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\flow.js" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\form.js" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\jquery.js" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\laydate.js" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\layedit.js" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\layer.js" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\laytpl.js" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\layui-mz-min.js" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\mobile.js" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\skin\default\icon-ext.png" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\skin\default\icon.png" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\skin\default\layer.css" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\skin\default\loading-0.gif" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\skin\default\loading-1.gif" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\skin\default\loading-2.gif" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\tree.js" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\upload.js" />
+    <Content Include="WebAdmin\scripts\layui\lay\modules\util.js" />
+    <Content Include="WebAdmin\scripts\md5.js" />
+    <Content Include="WebAdmin\scripts\model\apiurl.js" />
+    <Content Include="WebAdmin\scripts\model\base.js" />
+    <Content Include="WebAdmin\scripts\JSManager\Scenic\RouteManager.js" />
+    <Content Include="WebAdmin\scripts\model\CheckCode.js" />
+    <Content Include="WebAdmin\scripts\model\jQuery.XDomainRequest.js" />
+    <Content Include="WebAdmin\scripts\model\jquery.xdomainrequest.min.js" />
+    <Content Include="WebAdmin\scripts\navbar.js" />
+    <Content Include="WebAdmin\scripts\tab.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\anchor\anchor.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\attachment.css" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\attachment.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\attachment.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\fileTypeImages\icon_chm.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\fileTypeImages\icon_default.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\fileTypeImages\icon_doc.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\fileTypeImages\icon_exe.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\fileTypeImages\icon_jpg.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\fileTypeImages\icon_mp3.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\fileTypeImages\icon_mv.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\fileTypeImages\icon_pdf.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\fileTypeImages\icon_ppt.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\fileTypeImages\icon_psd.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\fileTypeImages\icon_rar.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\fileTypeImages\icon_txt.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\fileTypeImages\icon_xls.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\images\alignicon.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\images\alignicon.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\images\bg.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\images\file-icons.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\images\file-icons.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\images\icons.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\images\icons.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\images\image.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\images\progress.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\images\success.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\attachment\images\success.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\background\background.css" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\background\background.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\background\background.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\background\images\bg.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\background\images\success.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\charts\chart.config.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\charts\charts.css" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\charts\charts.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\charts\charts.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\charts\images\charts0.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\charts\images\charts1.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\charts\images\charts2.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\charts\images\charts3.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\charts\images\charts4.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\charts\images\charts5.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\emotion\emotion.css" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\emotion\emotion.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\emotion\emotion.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\emotion\images\0.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\emotion\images\bface.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\emotion\images\cface.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\emotion\images\fface.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\emotion\images\tface.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\emotion\images\wface.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\emotion\images\yface.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\gmap\gmap.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\help\help.css" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\help\help.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\help\help.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\image\image.css" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\image\image.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\image\image.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\image\images\alignicon.jpg" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\image\images\bg.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\image\images\icons.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\image\images\icons.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\image\images\image.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\image\images\progress.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\image\images\success.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\image\images\success.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\insertframe\insertframe.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\internal.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\link\link.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\map\map.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\map\show.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\music\music.css" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\music\music.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\music\music.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\preview\preview.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\scrawl\images\addimg.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\scrawl\images\brush.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\scrawl\images\delimg.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\scrawl\images\delimgH.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\scrawl\images\empty.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\scrawl\images\emptyH.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\scrawl\images\eraser.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\scrawl\images\redo.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\scrawl\images\redoH.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\scrawl\images\scale.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\scrawl\images\scaleH.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\scrawl\images\size.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\scrawl\images\undo.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\scrawl\images\undoH.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\scrawl\scrawl.css" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\scrawl\scrawl.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\scrawl\scrawl.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\searchreplace\searchreplace.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\searchreplace\searchreplace.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\snapscreen\snapscreen.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\spechars\spechars.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\spechars\spechars.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\table\dragicon.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\table\edittable.css" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\table\edittable.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\table\edittable.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\table\edittd.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\table\edittip.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\template\config.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\template\images\bg.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\template\images\pre0.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\template\images\pre1.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\template\images\pre2.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\template\images\pre3.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\template\images\pre4.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\template\template.css" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\template\template.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\template\template.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\video\images\bg.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\video\images\center_focus.jpg" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\video\images\file-icons.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\video\images\file-icons.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\video\images\icons.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\video\images\icons.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\video\images\image.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\video\images\left_focus.jpg" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\video\images\none_focus.jpg" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\video\images\progress.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\video\images\right_focus.jpg" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\video\images\success.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\video\images\success.png" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\video\video.css" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\video\video.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\video\video.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\webapp\webapp.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\wordimage\fClipboard_ueditor.swf" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\wordimage\imageUploader.swf" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\wordimage\tangram.js" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\wordimage\wordimage.html" />
+    <Content Include="WebAdmin\scripts\UEditor\dialogs\wordimage\wordimage.js" />
+    <Content Include="WebAdmin\scripts\UEditor\index.html" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\en\en.js" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\en\images\addimage.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\en\images\background.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\en\images\button.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\en\images\copy.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\en\images\deletedisable.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\en\images\deleteenable.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\en\images\listbackground.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\en\images\localimage.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\en\images\music.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\en\images\rotateleftdisable.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\en\images\rotateleftenable.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\en\images\rotaterightdisable.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\en\images\rotaterightenable.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\en\images\upload.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\zh-cn\images\copy.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\zh-cn\images\localimage.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\zh-cn\images\music.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\zh-cn\images\upload.png" />
+    <Content Include="WebAdmin\scripts\UEditor\lang\zh-cn\zh-cn.js" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\css\ueditor.css" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\css\ueditor.min.css" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\dialogbase.css" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\anchor.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\arrow.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\arrow_down.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\arrow_up.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\button-bg.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\cancelbutton.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\charts.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\cursor_h.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\cursor_h.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\cursor_v.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\cursor_v.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\dialog-title-bg.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\filescan.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\highlighted.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\icons-all.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\icons.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\icons.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\loaderror.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\loading.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\lock.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\neweditor-tab-bg.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\pagebreak.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\scale.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\sortable.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\spacer.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\sparator_v.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\table-cell-align.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\tangram-colorpicker.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\toolbar_bg.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\unhighlighted.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\upload.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\videologo.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\word.gif" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\default\images\wordpaste.png" />
+    <Content Include="WebAdmin\scripts\UEditor\themes\iframe.css" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\codemirror\codemirror.css" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\codemirror\codemirror.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\adapters\mootools-adapter.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\adapters\mootools-adapter.src.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\adapters\prototype-adapter.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\adapters\prototype-adapter.src.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\adapters\standalone-framework.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\adapters\standalone-framework.src.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\highcharts-more.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\highcharts-more.src.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\highcharts.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\highcharts.src.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\annotations.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\annotations.src.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\canvas-tools.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\canvas-tools.src.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\data.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\data.src.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\drilldown.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\drilldown.src.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\exporting.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\exporting.src.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\funnel.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\funnel.src.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\heatmap.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\heatmap.src.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\map.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\map.src.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\no-data-to-display.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\themes\dark-blue.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\themes\dark-green.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\themes\gray.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\themes\grid.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\highcharts\themes\skies.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\jquery-1.10.2.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\jquery-1.10.2.min.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\jquery-1.10.2.min.map" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\snapscreen\UEditorSnapscreen.exe" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\SyntaxHighlighter\shCore.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\video-js\font\vjs.eot" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\video-js\font\vjs.svg" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\video-js\font\vjs.ttf" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\video-js\font\vjs.woff" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\video-js\video-js.css" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\video-js\video-js.min.css" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\video-js\video-js.swf" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\video-js\video.dev.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\video-js\video.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\webuploader\Uploader.swf" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\webuploader\webuploader.css" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\webuploader\webuploader.custom.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\webuploader\webuploader.custom.min.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\webuploader\webuploader.flashonly.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\webuploader\webuploader.flashonly.min.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\webuploader\webuploader.html5only.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\webuploader\webuploader.html5only.min.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\webuploader\webuploader.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\webuploader\webuploader.min.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\webuploader\webuploader.withoutimage.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\webuploader\webuploader.withoutimage.min.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\xss.min.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\zeroclipboard\ZeroClipboard.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\zeroclipboard\ZeroClipboard.min.js" />
+    <Content Include="WebAdmin\scripts\UEditor\third-party\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="WebAdmin\scripts\UEditor\ueditor.all.js" />
+    <Content Include="WebAdmin\scripts\UEditor\ueditor.all.min.js" />
+    <Content Include="WebAdmin\scripts\UEditor\ueditor.config.js" />
+    <Content Include="WebAdmin\scripts\UEditor\ueditor.parse.js" />
+    <Content Include="WebAdmin\scripts\UEditor\ueditor.parse.min.js" />
+    <Content Include="WebAdmin\scripts\UEditor\UEditorHandler.ashx" />
+    <Content Include="WebAdmin\scripts\webuploader\build\docTpl\css\doc.css" />
+    <Content Include="WebAdmin\scripts\webuploader\build\fis\intro.js" />
+    <Content Include="WebAdmin\scripts\webuploader\build\fis\outro.js" />
+    <Content Include="WebAdmin\scripts\webuploader\build\intro.js" />
+    <Content Include="WebAdmin\scripts\webuploader\build\outro.js" />
+    <Content Include="WebAdmin\scripts\webuploader\build\tasks\build.js" />
+    <Content Include="WebAdmin\scripts\webuploader\build\tasks\concat.js" />
+    <Content Include="WebAdmin\scripts\webuploader\build\tasks\doc.js" />
+    <Content Include="WebAdmin\scripts\webuploader\css\webuploader.css" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\Uploader.swf" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\webuploader.css" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\webuploader.custom.js" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\webuploader.custom.min.js" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\webuploader.fis.js" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\webuploader.flashonly.js" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\webuploader.flashonly.min.js" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\webuploader.html5nodepend.js" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\webuploader.html5only.js" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\webuploader.html5only.min.js" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\webuploader.js" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\webuploader.min.js" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\webuploader.noimage.js" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\webuploader.noimage.min.js" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\webuploader.nolog.js" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\webuploader.nolog.min.js" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\webuploader.withoutimage.js" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\webuploader.withoutimage.min.js" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\cropper\cropper.css" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\cropper\cropper.js" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\cropper\index.html" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\cropper\jquery.js" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\cropper\style.css" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\cropper\uploader.js" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\image-upload\bg.png" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\image-upload\expressInstall.swf" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\image-upload\icons.png" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\image-upload\image.png" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\image-upload\index.html" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\image-upload\jquery.js" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\image-upload\progress.png" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\image-upload\style.css" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\image-upload\success.png" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\image-upload\upload.js" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\md5-demo\index.html" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\md5-demo\script.js" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\requirejs\app.js" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\requirejs\index.html" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\requirejs\require.js" />
+    <Content Include="WebAdmin\scripts\webuploader\Gruntfile.js" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\css\bootstrap-theme.css" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\css\bootstrap-theme.min.css" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\css\bootstrap.css" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\css\bootstrap.min.css" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\css\demo.css" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\css\font-awesome.css" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\css\font-awesome.min.css" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\css\style.css" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\css\syntax.css" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\css\webuploader.css" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\doc\css\doc.css" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\doc\index.html" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\fonts\fontawesome-webfont.svg" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\images\banner.jpg" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\images\bg.png" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\images\favicon.ico" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\images\favicon.png" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\images\icons.png" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\images\image.png" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\images\progress.png" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\images\qrcode.jpg" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\images\success.png" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\js\bootstrap.js" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\js\bootstrap.min.js" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\js\demo.js" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\js\getting-started.js" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\js\global.js" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\js\jquery-1.10.2.min.js" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\js\Uploader.swf" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\js\webuploader.js" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\_includes\comments.html" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\_includes\footer.html" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\_includes\header.html" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\_layouts\default.html" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\_layouts\post.html" />
+    <Content Include="WebAdmin\scripts\webuploader\server\crossdomain.xml" />
+    <Content Include="WebAdmin\scripts\webuploader\src\base.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\dollar-builtin.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\dollar-third.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\dollar.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\file.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\lib\blob.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\lib\dnd.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\lib\file.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\lib\filepaste.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\lib\filepicker.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\lib\image.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\lib\md5.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\lib\transport.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\mediator.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\preset\all.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\preset\flashonly.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\preset\html5only.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\preset\withoutimage.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\promise-builtin.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\promise-third.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\promise.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\queue.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\client.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\compbase.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\flash\blob.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\flash\filepicker.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\flash\image.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\flash\md5.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\flash\runtime.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\flash\transport.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\html5\androidpatch.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\html5\blob.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\html5\dnd.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\html5\filepaste.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\html5\filepicker.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\html5\image.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\html5\imagemeta.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\html5\imagemeta\exif.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\html5\jpegencoder.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\html5\md5.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\html5\runtime.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\html5\transport.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\html5\util.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\runtime\runtime.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\uploader.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\webuploader.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\widgets\filednd.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\widgets\filepaste.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\widgets\filepicker.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\widgets\image.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\widgets\log.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\widgets\md5.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\widgets\queue.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\widgets\runtime.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\widgets\upload.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\widgets\validator.js" />
+    <Content Include="WebAdmin\scripts\webuploader\src\widgets\widget.js" />
+    <Content Include="WebAdmin\scripts\webuploader\test\index.html" />
+    <Content Include="WebAdmin\scripts\webuploader\test\jquery-1.10.1.min.js" />
+    <Content Include="WebAdmin\scripts\webuploader\test\Qunit\qunit-1.14.0.css" />
+    <Content Include="WebAdmin\scripts\webuploader\test\Qunit\qunit-1.14.0.js" />
+    <Content Include="WebAdmin\scripts\webuploader\test\require.js" />
+    <Content Include="WebAdmin\scripts\webuploader\test\units\base.js" />
+    <Content Include="WebAdmin\scripts\webuploader\test\units\filepicker.js" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\demo.html" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\demo.js" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\demo2.html" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\demo2.js" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\as3api.cpp" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\exports.txt" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hashlibpp.h" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_exception.h" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_hashwrapper.h" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_md5.cpp" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_md5.h" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_md5wrapper.cpp" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_md5wrapper.h" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_sha1.cpp" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_sha1.h" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_sha1wrapper.cpp" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_sha1wrapper.h" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_sha256.cpp" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_sha256.h" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_sha256wrapper.cpp" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_sha256wrapper.h" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_sha2ext.cpp" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_sha2ext.h" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_sha2mac.h" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_sha384wrapper.cpp" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_sha384wrapper.h" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_sha512wrapper.cpp" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_sha512wrapper.h" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_types.h" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_wrapperfactory.cpp" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\hl_wrapperfactory.h" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\main.cpp" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\hashFile.js" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\md5.js" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\md5File.js" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\music\bg.png" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\music\icons.png" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\music\image.png" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\music\index.html" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\music\jquery.js" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\music\md5.js" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\music\progress.png" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\music\style.css" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\music\success.png" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\music\upload.js" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\music\webuploader.js" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\api.js" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\common.css" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\common_ie6.css" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\img\apiMenu.gif" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\img\apiMenu.png" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\img\background.jpg" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\img\chinese.png" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\img\close.png" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\img\contact-bg.png" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\img\english.png" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\img\header-bg.png" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\img\lightbulb.png" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\img\overlay_arrow.gif" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\img\overlay_arrow.png" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\img\overlay_bg.png" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\img\overlay_close_IE6.gif" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\img\zTreeStandard.gif" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\img\zTreeStandard.png" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\jquery-1.6.2.min.js" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\jquery.ztree.core.js" />
+    <Content Include="WebAdmin\scripts\zTree\api\apiCss\zTreeStyleForApi.css" />
+    <Content Include="WebAdmin\scripts\zTree\api\API_cn.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\API_en.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\fn.zTree.destroy.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\fn.zTree.getZTreeObj.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\fn.zTree.init.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\fn.zTree._z.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.async.autoParam.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.async.contentType.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.async.dataFilter.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.async.dataType.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.async.enable.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.async.otherParam.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.async.type.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.async.url.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.beforeAsync.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.beforeCheck.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.beforeClick.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.beforeCollapse.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.beforeDblClick.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.beforeDrag.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.beforeDragOpen.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.beforeDrop.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.beforeEditName.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.beforeExpand.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.beforeMouseDown.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.beforeMouseUp.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.beforeRemove.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.beforeRename.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.beforeRightClick.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.onAsyncError.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.onAsyncSuccess.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.onCheck.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.onClick.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.onCollapse.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.onDblClick.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.onDrag.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.onDragMove.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.onDrop.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.onExpand.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.onMouseDown.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.onMouseUp.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.onNodeCreated.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.onRemove.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.onRename.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.callback.onRightClick.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.check.autoCheckTrigger.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.check.chkboxType.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.check.chkDisabledInherit.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.check.chkStyle.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.check.enable.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.check.nocheckInherit.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.check.radioType.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.data.keep.leaf.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.data.keep.parent.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.data.key.checked.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.data.key.children.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.data.key.name.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.data.key.title.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.data.key.url.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.data.simpleData.enable.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.data.simpleData.idKey.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.data.simpleData.pIdKey.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.data.simpleData.rootPId.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.edit.drag.autoExpandTrigger.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.edit.drag.autoOpenTime.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.edit.drag.borderMax.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.edit.drag.borderMin.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.edit.drag.inner.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.edit.drag.isCopy.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.edit.drag.isMove.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.edit.drag.maxShowNodeNum.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.edit.drag.minMoveSize.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.edit.drag.next.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.edit.drag.prev.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.edit.editNameSelectAll.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.edit.enable.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.edit.removeTitle.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.edit.renameTitle.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.edit.showRemoveBtn.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.edit.showRenameBtn.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.treeId.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.treeObj.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.view.addDiyDom.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.view.addHoverDom.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.view.autoCancelSelected.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.view.dblClickExpand.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.view.expandSpeed.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.view.fontCss.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.view.nameIsHTML.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.view.removeHoverDom.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.view.selectedMulti.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.view.showIcon.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.view.showLine.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.view.showTitle.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\setting.view.txtSelectedEnable.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.checked.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.checkedOld.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.check_Child_State.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.check_Focus.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.children.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.chkDisabled.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.click.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.diy.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.editNameFlag.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.getCheckStatus.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.getIndex.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.getNextNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.getParentNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.getPath.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.getPreNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.halfCheck.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.icon.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.iconClose.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.iconOpen.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.iconSkin.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.isAjaxing.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.isFirstNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.isHidden.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.isHover.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.isLastNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.isParent.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.level.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.name.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.nocheck.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.open.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.parentTId.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.target.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.tId.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.url.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\treeNode.zAsync.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.addNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.cancelEditName.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.cancelSelectedNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.checkAllNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.checkNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.copyNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.destroy.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.editName.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.expandAll.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.expandNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.getChangeCheckedNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.getCheckedNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.getNodeByParam.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.getNodeByTId.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.getNodeIndex.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.getNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.getNodesByFilter.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.getNodesByParam.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.getNodesByParamFuzzy.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.getSelectedNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.hideNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.hideNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.moveNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.reAsyncChildNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.refresh.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.removeChildNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.removeNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.selectNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.setChkDisabled.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.setEditable.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.setting.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.showNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.showNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.transformToArray.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.transformTozTreeNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\cn\zTreeObj.updateNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\fn.zTree.destroy.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\fn.zTree.getZTreeObj.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\fn.zTree.init.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\fn.zTree._z.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.async.autoParam.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.async.contentType.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.async.dataFilter.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.async.dataType.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.async.enable.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.async.otherParam.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.async.type.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.async.url.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.beforeAsync.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.beforeCheck.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.beforeClick.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.beforeCollapse.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.beforeDblClick.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.beforeDrag.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.beforeDragOpen.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.beforeDrop.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.beforeEditName.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.beforeExpand.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.beforeMouseDown.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.beforeMouseUp.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.beforeRemove.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.beforeRename.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.beforeRightClick.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.onAsyncError.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.onAsyncSuccess.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.onCheck.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.onClick.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.onCollapse.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.onDblClick.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.onDrag.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.onDragMove.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.onDrop.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.onExpand.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.onMouseDown.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.onMouseUp.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.onNodeCreated.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.onRemove.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.onRename.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.callback.onRightClick.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.check.autoCheckTrigger.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.check.chkboxType.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.check.chkDisabledInherit.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.check.chkStyle.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.check.enable.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.check.nocheckInherit.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.check.radioType.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.data.keep.leaf.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.data.keep.parent.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.data.key.checked.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.data.key.children.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.data.key.name.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.data.key.title.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.data.key.url.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.data.simpleData.enable.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.data.simpleData.idKey.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.data.simpleData.pIdKey.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.data.simpleData.rootPId.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.edit.drag.autoExpandTrigger.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.edit.drag.autoOpenTime.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.edit.drag.borderMax.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.edit.drag.borderMin.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.edit.drag.inner.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.edit.drag.isCopy.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.edit.drag.isMove.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.edit.drag.maxShowNodeNum.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.edit.drag.minMoveSize.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.edit.drag.next.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.edit.drag.prev.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.edit.editNameSelectAll.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.edit.enable.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.edit.removeTitle.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.edit.renameTitle.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.edit.showRemoveBtn.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.edit.showRenameBtn.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.treeId.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.treeObj.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.view.addDiyDom.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.view.addHoverDom.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.view.autoCancelSelected.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.view.dblClickExpand.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.view.expandSpeed.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.view.fontCss.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.view.nameIsHTML.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.view.removeHoverDom.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.view.selectedMulti.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.view.showIcon.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.view.showLine.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.view.showTitle.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\setting.view.txtSelectedEnable.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.checked.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.checkedOld.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.check_Child_State.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.check_Focus.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.children.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.chkDisabled.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.click.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.diy.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.editNameFlag.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.getCheckStatus.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.getIndex.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.getNextNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.getParentNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.getPath.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.getPreNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.halfCheck.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.icon.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.iconClose.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.iconOpen.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.iconSkin.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.isAjaxing.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.isFirstNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.isHidden.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.isHover.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.isLastNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.isParent.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.level.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.name.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.nocheck.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.open.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.parentTId.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.target.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.tId.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.url.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\treeNode.zAsync.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.addNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.cancelEditName.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.cancelSelectedNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.checkAllNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.checkNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.copyNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.destroy.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.editName.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.expandAll.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.expandNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.getChangeCheckedNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.getCheckedNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.getNodeByParam.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.getNodeByTId.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.getNodeIndex.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.getNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.getNodesByFilter.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.getNodesByParam.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.getNodesByParamFuzzy.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.getSelectedNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.hideNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.hideNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.moveNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.reAsyncChildNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.refresh.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.removeChildNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.removeNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.selectNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.setChkDisabled.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.setEditable.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.setting.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.showNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.showNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.transformToArray.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.transformTozTreeNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\api\en\zTreeObj.updateNode.html" />
+    <Content Include="WebAdmin\scripts\zTree\css\awesomeStyle\awesome.css" />
+    <Content Include="WebAdmin\scripts\zTree\css\awesomeStyle\img\loading.gif" />
+    <Content Include="WebAdmin\scripts\zTree\css\demo.css" />
+    <Content Include="WebAdmin\scripts\zTree\css\metroStyle\img\line_conn.png" />
+    <Content Include="WebAdmin\scripts\zTree\css\metroStyle\img\loading.gif" />
+    <Content Include="WebAdmin\scripts\zTree\css\metroStyle\img\metro.gif" />
+    <Content Include="WebAdmin\scripts\zTree\css\metroStyle\img\metro.png" />
+    <Content Include="WebAdmin\scripts\zTree\css\metroStyle\metroStyle.css" />
+    <Content Include="WebAdmin\scripts\zTree\css\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="WebAdmin\scripts\zTree\css\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="WebAdmin\scripts\zTree\css\zTreeStyle\img\diy\2.png" />
+    <Content Include="WebAdmin\scripts\zTree\css\zTreeStyle\img\diy\3.png" />
+    <Content Include="WebAdmin\scripts\zTree\css\zTreeStyle\img\diy\4.png" />
+    <Content Include="WebAdmin\scripts\zTree\css\zTreeStyle\img\diy\5.png" />
+    <Content Include="WebAdmin\scripts\zTree\css\zTreeStyle\img\diy\6.png" />
+    <Content Include="WebAdmin\scripts\zTree\css\zTreeStyle\img\diy\7.png" />
+    <Content Include="WebAdmin\scripts\zTree\css\zTreeStyle\img\diy\8.png" />
+    <Content Include="WebAdmin\scripts\zTree\css\zTreeStyle\img\diy\9.png" />
+    <Content Include="WebAdmin\scripts\zTree\css\zTreeStyle\img\line_conn.gif" />
+    <Content Include="WebAdmin\scripts\zTree\css\zTreeStyle\img\loading.gif" />
+    <Content Include="WebAdmin\scripts\zTree\css\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="WebAdmin\scripts\zTree\css\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="WebAdmin\scripts\zTree\css\zTreeStyle\zTreeStyle.css" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\bigdata\common.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\bigdata\diy_async.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\bigdata\page.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\core\async.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\core\async_fun.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\core\click.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\core\custom_font.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\core\custom_icon.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\core\custom_iconSkin.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\core\expand.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\core\noicon.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\core\noline.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\core\otherMouse.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\core\searchNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\core\simpleData.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\core\standardData.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\core\update_fun.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\core\url.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\excheck\checkbox.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\excheck\checkbox_chkDisabled.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\excheck\checkbox_count.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\excheck\checkbox_fun.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\excheck\checkbox_halfCheck.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\excheck\checkbox_nocheck.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\excheck\radio.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\excheck\radio_chkDisabled.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\excheck\radio_fun.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\excheck\radio_halfCheck.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\excheck\radio_nocheck.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\exedit\async_edit.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\exedit\drag.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\exedit\drag_fun.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\exedit\drag_super.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\exedit\edit.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\exedit\edit_fun.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\exedit\edit_super.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\exedit\multiTree.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\exhide\checkbox.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\exhide\common.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\exhide\radio.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\index.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\super\asyncForAll.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\super\awesome.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\super\checkbox_radio.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\super\diydom.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\super\dragWithOther.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\super\left_menu.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\super\left_menuForOutLook.gif" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\super\left_menuForOutLook.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\super\left_menuForOutLook.png" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\super\metro.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\super\oneclick.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\super\oneroot.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\super\rightClickMenu.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\super\select_menu.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\super\select_menu_checkbox.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\super\select_menu_radio.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\super\singlepath.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\bigdata\common.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\bigdata\diy_async.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\bigdata\page.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\core\async.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\core\async_fun.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\core\click.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\core\custom_font.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\core\custom_icon.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\core\custom_iconSkin.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\core\expand.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\core\noicon.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\core\noline.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\core\otherMouse.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\core\searchNodes.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\core\simpleData.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\core\standardData.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\core\update_fun.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\core\url.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\excheck\checkbox.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\excheck\checkbox_chkDisabled.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\excheck\checkbox_count.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\excheck\checkbox_fun.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\excheck\checkbox_halfCheck.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\excheck\checkbox_nocheck.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\excheck\radio.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\excheck\radio_chkDisabled.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\excheck\radio_fun.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\excheck\radio_halfCheck.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\excheck\radio_nocheck.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\exedit\async_edit.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\exedit\drag.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\exedit\drag_fun.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\exedit\drag_super.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\exedit\edit.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\exedit\edit_fun.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\exedit\edit_super.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\exedit\multiTree.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\exhide\checkbox.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\exhide\common.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\exhide\radio.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\index.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\asyncForAll.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\awesome.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\checkbox_radio.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\diydom.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\dragWithOther.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\left_menu.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\left_menuForOutLook.gif" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\left_menuForOutLook.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\left_menuForOutLook.png" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\metro.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\oneclick.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\oneroot.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\rightClickMenu.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\select_menu.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\select_menu_checkbox.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\select_menu_radio.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\singlepath.html" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\super\ztree.html" />
+    <Content Include="WebAdmin\scripts\zTree\js\jquery-1.4.4.min.js" />
+    <Content Include="WebAdmin\scripts\zTree\js\jquery.ztree.all.js" />
+    <Content Include="WebAdmin\scripts\zTree\js\jquery.ztree.all.min.js" />
+    <Content Include="WebAdmin\scripts\zTree\js\jquery.ztree.core.js" />
+    <Content Include="WebAdmin\scripts\zTree\js\jquery.ztree.core.min.js" />
+    <Content Include="WebAdmin\scripts\zTree\js\jquery.ztree.excheck.js" />
+    <Content Include="WebAdmin\scripts\zTree\js\jquery.ztree.excheck.min.js" />
+    <Content Include="WebAdmin\scripts\zTree\js\jquery.ztree.exedit.js" />
+    <Content Include="WebAdmin\scripts\zTree\js\jquery.ztree.exedit.min.js" />
+    <Content Include="WebAdmin\scripts\zTree\js\jquery.ztree.exhide.js" />
+    <Content Include="WebAdmin\scripts\zTree\js\jquery.ztree.exhide.min.js" />
+    <Content Include="WebAdmin\scripts\zTree\log v3.x.txt" />
+    <Content Include="WebAdmin\SystemManager\AddNavInfo.aspx" />
+    <Content Include="WebAdmin\SystemManager\AddRoleInfo.aspx" />
+    <Content Include="WebAdmin\SystemManager\AddUserInfo.aspx" />
+    <Content Include="WebAdmin\SystemManager\ChangePWD.html" />
+    <Content Include="WebAdmin\SystemManager\EditNavInfo.aspx" />
+    <Content Include="WebAdmin\SystemManager\EditRoleInfo.aspx" />
+    <Content Include="WebAdmin\SystemManager\EditUserInfo.aspx" />
+    <Content Include="WebAdmin\SystemManager\NavListManager.aspx" />
+    <Content Include="WebAdmin\SystemManager\PersonInfo.html" />
+    <Content Include="WebAdmin\SystemManager\RolesListManager.aspx" />
+    <Content Include="WebAdmin\SystemManager\SysConfigManager.aspx" />
+    <Content Include="WebAdmin\SystemManager\UsersListManager.aspx" />
+    <Content Include="WebAdmin\WebsiteManager\LogsManager.aspx" />
+    <Content Include="WebAdmin\WebsiteManager\ModuleAdd.aspx" />
+    <Content Include="WebAdmin\WebsiteManager\ModuleEdit.aspx" />
+    <Content Include="WebAdmin\WebsiteManager\ModuleManager.aspx" />
+    <Content Include="WebAdmin\WebsiteManager\VisitAnaly.aspx" />
+    <Content Include="WebAdmin\WebsiteManager\VisitSearch.aspx" />
+    <None Include="Properties\PublishProfiles\163.pubxml" />
+    <None Include="Properties\PublishProfiles\207.pubxml" />
+    <None Include="Properties\PublishProfiles\216.pubxml" />
+    <None Include="Properties\PublishProfiles\ALI.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\UEditor\net\Bin\Newtonsoft.Json.dll" />
+    <Content Include="Scripts\UEditor\net\Bin\Newtonsoft.Json.pdb" />
+    <Content Include="Scripts\UEditor\net\Bin\Newtonsoft.Json.xml" />
+    <Content Include="Scripts\UEditor\net\net.sln" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\UEditor\net\.vs\net\v14\.suo" />
+    <Content Include="Scripts\UEditor\net\config.json" />
+    <Content Include="Scripts\UEditor\net\controller.ashx" />
+    <Content Include="Scripts\UEditor\net\README.md" />
+    <Content Include="Scripts\UEditor\net\Web.config" />
+    <Content Include="WebAdmin\css\fonts\fontawesome-webfont.eot" />
+    <Content Include="WebAdmin\css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="WebAdmin\css\fonts\fontawesome-webfont.woff" />
+    <Content Include="WebAdmin\css\fonts\fontawesome-webfont.woff2" />
+    <Content Include="WebAdmin\css\fonts\FontAwesome.otf" />
+    <Content Include="WebAdmin\scripts\jquery-1.10.2.min.map" />
+    <Content Include="WebAdmin\scripts\layui\font\iconfont.eot" />
+    <Content Include="WebAdmin\scripts\layui\font\iconfont.ttf" />
+    <Content Include="WebAdmin\scripts\layui\font\iconfont.woff" />
+    <Content Include="WebAdmin\scripts\webuploader\.gitignore" />
+    <Content Include="WebAdmin\scripts\webuploader\.jshintrc" />
+    <Content Include="WebAdmin\scripts\webuploader\.travis.yml" />
+    <Content Include="WebAdmin\scripts\webuploader\bower.json" />
+    <Content Include="WebAdmin\scripts\webuploader\build\docTpl\class.ejs" />
+    <Content Include="WebAdmin\scripts\webuploader\build\docTpl\content.ejs" />
+    <Content Include="WebAdmin\scripts\webuploader\build\docTpl\events.ejs" />
+    <Content Include="WebAdmin\scripts\webuploader\build\docTpl\items.ejs" />
+    <Content Include="WebAdmin\scripts\webuploader\build\docTpl\layout.ejs" />
+    <Content Include="WebAdmin\scripts\webuploader\build\docTpl\module.ejs" />
+    <Content Include="WebAdmin\scripts\webuploader\build\docTpl\options.ejs" />
+    <Content Include="WebAdmin\scripts\webuploader\build\docTpl\plugins.ejs" />
+    <Content Include="WebAdmin\scripts\webuploader\build\docTpl\sidebar.ejs" />
+    <Content Include="WebAdmin\scripts\webuploader\dist\README.md" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\image-upload\icons.psd" />
+    <Content Include="WebAdmin\scripts\webuploader\examples\image-upload\progress.psd" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\.actionScriptProperties" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\.project" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\.settings\org.eclipse.core.resources.prefs" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\lib.fla" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\lib\as3corelib.swc" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\lib\lib.swc" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\lib\stringecho.swc" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\lib\Test.swc" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\ComponentFactory.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\Blob.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\errors\DOMError.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\errors\ImageError.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\errors\RuntimeError.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\events\FilePickerEvent.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\events\ImageEvent.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\events\ODataEvent.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\events\OErrorEvent.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\events\OProgressEvent.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\events\URLStreamProgressEvent.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\File.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\FilePicker.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\FileReader.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\FileReaderSync.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\Image.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\image\ascb\filters\ColorMatrixArrays.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\image\ascb\filters\ConvolutionMatrixArrays.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\image\BMP.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\image\events\ExifParserEvent.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\image\ExifParser.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\image\formatlos\BitmapDataUnlimited.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\image\formatlos\events\BitmapDataUnlimitedEvent.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\image\formatlos\Gif.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\image\GIF.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\image\ImageEditor.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\image\JPEG.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\image\JPEGEncoder.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\image\PNG.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\Md5.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\utils\Base64.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\utils\BinaryReader.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\utils\BMPDecoder.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\utils\Buffer.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\utils\OEventDispatcher.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\utils\URLStreamProgress.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\utils\Utils.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\utils\Zhenpin.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\com\XMLHttpRequest.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\src\Uploader.as" />
+    <Content Include="WebAdmin\scripts\webuploader\flash\Uploader.iml" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\demo.md" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\document.md" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\download.md" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\fonts\fontawesome-webfont.eot" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\fonts\fontawesome-webfont.ttf" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\fonts\fontawesome-webfont.woff" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\fonts\FontAwesome.otf" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\getting-started.md" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\images\logo.psd" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\index.md" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\js\jquery-1.10.2.min.map" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\_config.yml" />
+    <Content Include="WebAdmin\scripts\webuploader\jekyll\_plugins\fancytoc.rb" />
+    <Content Include="WebAdmin\scripts\webuploader\LICENSE" />
+    <Content Include="WebAdmin\scripts\webuploader\package.json" />
+    <Content Include="WebAdmin\scripts\webuploader\README.md" />
+    <Content Include="WebAdmin\scripts\webuploader\server\fileupload.php" />
+    <Content Include="WebAdmin\scripts\webuploader\server\fileupload2.php" />
+    <Content Include="WebAdmin\scripts\webuploader\server\preview.php" />
+    <Content Include="WebAdmin\scripts\webuploader\test\testDesign\webuploader.xmind" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\hashlib\Makefile" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\makefile" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\flash_cpp\Test.swc" />
+    <Content Include="WebAdmin\scripts\webuploader\_draft\music\server\fileupload.php" />
+    <Content Include="WebAdmin\scripts\zTree\.gitattributes" />
+    <Content Include="WebAdmin\scripts\zTree\.gitignore" />
+    <Content Include="WebAdmin\scripts\zTree\css\awesomeStyle\awesome.less" />
+    <Content Include="WebAdmin\scripts\zTree\css\awesomeStyle\fa.less" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\asyncData\getNodes.php" />
+    <Content Include="WebAdmin\scripts\zTree\demo\cn\asyncData\getNodesForBigData.php" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\asyncData\getNodes.php" />
+    <Content Include="WebAdmin\scripts\zTree\demo\en\asyncData\getNodesForBigData.php" />
+    <Content Include="WebAdmin\scripts\zTree\js\ztree.3.5.26.zip" />
+    <Content Include="WebAdmin\scripts\zTree\package.json" />
+    <Content Include="WebAdmin\scripts\zTree\README.md" />
+    <Content Include="WebAdmin\scripts\zTree\zTree.v3.jquery.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMS.Application\CMS.Application.csproj">
+      <Project>{8909ec23-7ca8-4e83-bc3b-d9b530c02ac4}</Project>
+      <Name>CMS.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMS.Model\CMS.Model.csproj">
+      <Project>{5ff64223-396f-473f-8399-5002b3310f42}</Project>
+      <Name>CMS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMS.Util\CMS.Util.csproj">
+      <Project>{f846361b-cb7b-47b9-8fce-52c47e430f92}</Project>
+      <Name>CMS.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>16749</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:199</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

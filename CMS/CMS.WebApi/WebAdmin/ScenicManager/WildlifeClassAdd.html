@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html ng-app="myClass">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>动植物分类添加</title>
+	<meta charset="utf-8" />
+    <link href="../scripts/layui/css/layui.css" rel="stylesheet" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../css/cmsui.css" rel="stylesheet" />
+    <link href="../scripts/layui/css/modules/layer/default/layer.css" rel="stylesheet" />
+</head>
+<body ng-controller="ClassController">
+    <form id="myForm" name="myForm" class="layui-form layui-form-pane">
+        <blockquote class="layui-elem-quote">
+            添加分类
+        </blockquote>
+        <div style="width: 1200px;">
+            <div class="layui-form-item">
+                <label class="layui-form-label">类别名称</label>
+                <div class="layui-input-inline">
+                    <input id="CateName" name="CateName" class="layui-input" placeholder="类别名称" autocomplete="off" ng-model="CateName" required />
+                    <span class="valid" ng-show="myForm.CateName.$error.required">标题不能为空</span>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">类型</label>
+                <div class="layui-input-inline">
+                    <select id="Type" name="Type" class="Type" lay-filter="Type">
+                        <option value="" selected="">请选择</option>
+                        <option value="1">动物</option>
+                        <option value="2">植物</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">排序</label>
+                <div class="layui-input-inline">
+                    <input id="OrderID" name="OrderID" class="layui-input" placeholder="排序号" value="99" autocomplete="off" />
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <input type="button" id="submit" class="layui-btn" value="提交"  data-ng-class="{true:'layui-btn-disabled',false:''}[myForm.$invalid]" data-ng-disabled="myForm.$invalid"/>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    <input type="button" id="back" class="layui-btn" value="返回" onclick="backs()" />
+                </div>
+            </div>
+        </div>
+        <script src="../scripts/angular.min.js"></script>
+        <script src="../scripts/layui/layui.js"></script>
+        <script src="../scripts/jquery-1.10.2.min.js"></script>
+        <script src="../scripts/model/apiurl.js"></script>
+
+        <script src="../scripts/JSManager/Scenic/WildlifeClassAdd.js"></script>
+</form>
+</body>
+</html>

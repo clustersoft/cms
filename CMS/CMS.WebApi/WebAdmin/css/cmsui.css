@@ -1,0 +1,89 @@
+﻿body {
+    margin-left:10px;
+}
+.valid {
+            top: 0px; width: 100%; text-align: right; right: 0px; color: rgb(169, 68, 66); line-height: 38px; padding-right: 20px; padding-bottom: 0px; font-size: 12px; margin-top: 0px; display: block; position: absolute; z-index: 2; pointer-events: none; animation-duration: 0.2s;
+        }
+.widthset { width:500px;
+}
+.border{border:1px solid #ccc}
+/*关键词文本框宽度*/
+.keywordsWidth{width:150px;}
+/*日期文本框宽度*/
+.dateWidth{width:130px;}
+/*日期文本框宽度、带时分秒*/
+.dateTimeWidth{width:180px;}
+/*通用间隔*/
+.marginleft{margin-left:10px;}
+.margintop{margin-top:10px;}
+.marginbottom{margin-bottom:10px;}
+.labelwidth {
+    width: 120px;
+}
+.selectwidth{
+    width:200px;
+}
+.select-margin-left{margin-left:40px;}
+
+.tree-table-box .tree-table-tree-box{
+    width: 18%;
+    min-height: 50%;
+    display: inline-block;
+    /*outline: 1px solid #ccc;*/
+    vertical-align: top;
+}
+.tree-table-box .tree-table-table-box {
+    display: inline-block;
+    vertical-align: top;
+    width: 80%;
+    margin-left: 1%;
+}
+.treeset{width: 97%; height: 50%; border: 1px solid #ccc;}
+.head-box{height: 38px;margin-bottom:10px;}
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.value {
+    width: 200px;
+    text-align: center;
+    vertical-align:central;
+    float: left;
+    margin-top: 1.4em;
+}
+.symbol {
+    width: 150px;
+    padding: 2em 0;
+    border-radius: 4px 0px 0px 4px;
+    display: inline-block;
+    text-align: center;
+}
+
+.symbol i {
+    color: #fff;
+    font-size: 3em;
+}
+.bgcolor{
+    background-color:#1AA094;
+}
+.bgcolor-wsh{background-color:#6285A7;}
+.home-number{font-size:30px;color:gray}
+.home-words{font-size:16px;}
+.home-box{width:350px;height:98px;background-color:#F2F2F2;}
+.pointer{cursor:pointer;}
+.sticktop{width:20px;height:20px;text-align:center;line-height:20px;margin:auto;}
+a{color:#009688;cursor:pointer}
+a:hover{color:#009688;text-decoration:underline}
+
+
+.layui-table td[name='padd'] {
+padding:4px;
+}
+
+.layui-table th[name='rolecheck'],.layui-table td[name='rolecheck'] {
+padding:0px;
+}

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5FF64223-396F-473F-8399-5002B3310F42}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMS.Model</RootNamespace>
+    <AssemblyName>CMS.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CMSAction.cs" />
+    <Compile Include="Article.cs" />
+    <Compile Include="ArticleArticleCategory.cs" />
+    <Compile Include="ArticleAttach.cs" />
+    <Compile Include="ArticleAuditLog.cs" />
+    <Compile Include="ArticleCategory.cs" />
+    <Compile Include="ArticleContent.cs" />
+    <Compile Include="CMSContext.cs" />
+    <Compile Include="Department.cs" />
+    <Compile Include="Enum\AttachTypesEnum.cs" />
+    <Compile Include="Enum\AuditStatusEnum.cs" />
+    <Compile Include="Enum\ViewSpotContentTypesEnum.cs" />
+    <Compile Include="Enum\WildlifeContentTypesEnum.cs" />
+    <Compile Include="Enum\WildlifeManagerTypesEnum.cs" />
+    <Compile Include="IconList.cs" />
+    <Compile Include="LeaveMessage.cs" />
+    <Compile Include="ListInfo.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Navgation.cs" />
+    <Compile Include="PagingInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicityCategory.cs" />
+    <Compile Include="PublicityContent.cs" />
+    <Compile Include="PublicityType.cs" />
+    <Compile Include="RefreshToken.cs" />
+    <Compile Include="ResponseInfoModel.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="RoleArticleCategoryAction.cs" />
+    <Compile Include="RoleNavAction.cs" />
+    <Compile Include="Route.cs" />
+    <Compile Include="RouteViewSpot.cs" />
+    <Compile Include="SystemConfiguration.cs" />
+    <Compile Include="Template.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserRole.cs" />
+    <Compile Include="ViewSpot.cs" />
+    <Compile Include="ViewSpotContent.cs" />
+    <Compile Include="VisitRecord.cs" />
+    <Compile Include="VisitRecordIpArea.cs" />
+    <Compile Include="WildlifeCategory.cs" />
+    <Compile Include="WildlifeContent.cs" />
+    <Compile Include="WildlifeManagement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
